@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+<h1>django form을 이용한 새 글 작성 페이지</h1>
+<!-- enctype="multipart/form-data" 를 써야 파일 업로드 가능 -->
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ htmlform.as_table }}
+    </table>
+    <input type="submit" value="새 글 생성하기">
+</form>

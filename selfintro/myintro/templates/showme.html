@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>나의 소개</title>
+    <link rel="stylesheet" href="{% static 'css/codelion.css' %}">
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="table-row">
+            <div class="title-box">
+                <!-- <h1>양종욱</h1> -->
+                <section>
+                    <h2>My Image</h2>
+                    <p><img src="{% static 'img/jongukposter.jpeg' %}" alt="" width="90%"></p>
+                    <p class="name-text">멋쟁이 사자처럼 <br>한성대학교 운영진</p>
+                </section>
+
+                <section>
+                    <h2>ABOUT ME</h2>
+                    <div class="float-wrap">
+                        <p class="about-me-text">
+                            이름 : 양종욱<br>
+                            생년월일 : 1998.07.08<br>
+                            전공 : 웹공학 / 빅데이터<br>
+                            MBTI : ESFJ<br>
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h2>COMMENT</h2>
+                    <p class="about-me-text">
+                        2022년도 한성대학교 멋쟁이 사자처럼 10기를 운영하는 웹공학 트랙회장 양종욱입니다. 여러분들과 함께
+                        즐거운 멋사를 진행해 보고 싶습니다. <br>
+                        저는 백엔드 분야인 Django 를 담당하고 있습니다. 백엔드를 희망하시는 친구분들은 저와 만나 같이 프로젝트를 진행해 보면 좋을 것 같습니다. <br>
+                        앞으로 잘 부탁드립니다 :)<br>
+                    </p>
+                </section>
+                <section>
+                    <div class="sns-wrap">
+                        <a href="http://facebook.com">
+                            <img class="sns-img" src="{% static 'img/facebook.png' %}"></a>
+                        <a href="#">
+                            <img class="sns-img" src="{% static 'img/insta.jpeg' %}"></a>
+                        <img class="sns-img" title="010-4774-9588" id="mouse" src="{% static 'img/tel.png' %}">
+                    </div>
+                </section>
+            </div>
+
+            <section class="section-box">
+
+                <section>
+                    <h2>PROFILE</h2>
+                    <div class="float-wrap">
+                        <p class="title-text">CAREER</p>
+                    </div>
+                    <div class="float-wrap">
+                        <li class="desc-subtext">2022 한성대학교 1대 웹공학 트랙회장</li>
+                        <li class="desc-subtext">2022 한성대학교 멋쟁이 사자처럼 운영진</li>
+                        <li class="desc-subtext">2021 한성대학교 17대 웹공학 트랙장</li>
+                        <li class="desc-subtext">2018 한성대학교 컴퓨터공학부 대의원</li>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2>EXPERIENCE</h2>
+                    <div class="float-wrap">
+                        <p class="title-text">Hansung University</p>
+                        <p class="year-text">2022 - Now</p>
+                    </div>
+                    <div>
+                        <p class="desc-text">Computer Engineering 4-Grade</p>
+                        <li class="desc-subtext">Web Programming</li>
+                        <li class="desc-subtext">Spring Framework</li>
+                        <li class="desc-subtext">Python</li>
+                        <li class="desc-subtext">BigData Programming</li>
+                    </div>
+                    <div>
+                        <p class="desc-text">Language</p>
+                        <li class="desc-subtext">C/C++</li>
+                        <li class="desc-subtext">JAVA</li>
+                        <li class="desc-subtext">Python</li>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>INTEREST</h2>
+                    <div class="float-wrap">
+                        <p class="title-text">Music</p>
+                    </div>
+                    <div class="float-wrap">
+                        <li class="desc-subtext">창모 - Hyperstar</li>
+                        <li class="desc-subtext">호미들 - 상하차</li>
+                        <li class="desc-subtext">ASH ISLAND - 멜로디</li>
+                        <li class="desc-subtext">Fromis_9 - WE GO</li>
+                    </div>
+                    <div class="float-wrap">
+                        <p class="title-text">Sports</p>
+                    </div>
+                    <div class="float-wrap">
+                        <li class="desc-subtext">축구</li>
+                        <li class="desc-subtext">농구</li>
+                        <li class="desc-subtext">배드민턴</li>
+                        <li class="desc-subtext">탁구</li>
+                    </div>
+                    <div class="float-wrap">
+                        <p class="title-text">Game</p>
+                    </div>
+                    <div class="float-wrap">
+                        <li class="desc-subtext">League Of Legends</li>
+                        <li class="desc-subtext">TFT</li>
+                        <li class="desc-subtext">카트라이더</li>
+                    </div>
+                </section>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Copyright CODE LION All rights reserved. </p>
+    </footer>
+
+</body>
+
+</html>

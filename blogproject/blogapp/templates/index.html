@@ -1,0 +1,28 @@
+{% if user.is_authenticated %}
+안녕하세요, {{ user.username }}님!<br/>
+<a href="{% url 'logout' %}">로그아웃</a>
+{% else %}
+아직 로그인이 되지 않았습니다.<br/>
+<a href="{% url 'login' %}">로그인</a>
+{% endif %}
+<br/>
+
+<h1>My Simple Blog</h1>
+
+<!-- 이 공간에는 블로그 글들의 목록을 보여줄 예정 
+    QuerySet = 데이터베이스로부터 전달받은 객체 목록(집합)
+-->
+{% for post in posts %}
+    <a href="{% url 'detail' post.id %}"><h3>제목 : {{ post.title }}</h3></a>
+    <h4>작성 날짜 : {{ post.date }}</h4>
+    django가 만든, 블로그 객체 생성 순서에 해당하는 보이지 않는 primary key : {{ post.id }}
+{% endfor %}
+<br><br>
+
+<!--
+<a href="{% url 'new' %}">HTML을 이용한 새 글 작성</a><br>
+<a href="{% url 'formcreate' %}">django form 을 이용한 새 글 작성</a> <br>
+-->
+{% if user.is_authenticated %}
+<a href="{% url 'modelformcreate' %}">django modelform 을 이용한 새 글 작성</a> <br>
+{% endif %}
