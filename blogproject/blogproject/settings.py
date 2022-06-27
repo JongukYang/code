@@ -101,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# 로그인이 성공하면 자동으로 redirect 시켜주는 명령 // return redirect('home')과 동일
 LOGIN_REDIRECT_URL = "/"
 
 # Internationalization
@@ -120,8 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# 사용자가 업로드한 미디어 파일이 저장되는 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+# 미디어 파일에 접근 가능한 URL
 MEDIA_URL = '/media/'
 
 # Default primary key field type

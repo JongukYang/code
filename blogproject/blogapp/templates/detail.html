@@ -10,7 +10,7 @@
 <h3>본문에 추가된 첨부파일</h3>
 {% if blog_detail.photo %}
     <!-- 사진 있으면 포스트에 찍어주기 -->
-    {{ blog_detail.photo.url }}
+    {{ blog_detail.photo.url }} 
     <img src="{{ blog_detail.photo.url }}" alt="" height="600">
 {% endif %}
 
@@ -22,7 +22,7 @@
 </form>
 <hr>
 <!-- 댓글 목록들 -->
-{% for comment in blog_detail.comment_set.all %}
+{% for comment in blog_detail..all %}
 <p>{{ comment }}</p>
 <hr>
 {% endfor %}

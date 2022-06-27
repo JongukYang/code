@@ -9,7 +9,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200) # 타이틀의 최대 길이는 200자
     body = models.TextField()
     # 사진을 추가하고싶어
-    photo = models.ImageField(blank=True, null=True, upload_to='blog_photo') # media/blog_photo 로 저장해줘
+    photo = models.ImageField(blank=True, null=True, upload_to='blog_photo') # upload_to : media/blog_photo 로 저장해줘
     date = models.DateTimeField(auto_now_add=True) # 자동으로 지금 시간을 추가하겠다
     # 장고에 primary key 를 설정하지 않았기 때문에 장고가 스스로 기본키를 생성했음 그것이 아마 id 일 것이다
 
