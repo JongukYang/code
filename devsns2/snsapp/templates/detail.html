@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>상세 페이지</h1>
+<h1>제목 : {{ post_detail.title }}</h1>
+<h2>작성 날짜 : {{ post_detail.date }}</h2>
+<p>
+    {{ post_detail.body }}
+</p>
+
+<!-- 댓글 목록 출력 -->
+<!-- _set 앞에 종속적인 개체들을 불러옴, .all은 전체를 가져옴 -->
+{% for comment in post_detail.comment_set.all %}
+    <p>{{ comment }}</p>
+    <p>{{ comment.date }}</p>
+    <hr>
+{% endfor %}
+<!-- 댓글 입력 공간 -->
+<form action="{% url 'new_comment' post_detail.id %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit" value="댓글 입력">
+</form>
+
+
+{% endblock %}
