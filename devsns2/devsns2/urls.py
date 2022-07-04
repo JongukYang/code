@@ -35,4 +35,6 @@ urlpatterns = [
     path('freepostcreate/', views.freepostcreate, name='freepostcreate'),
     path('freedetail/<int:post_id>', views.freedetail, name='freedetail'),
     path('new_freecomment/<int:post_id>', views.new_freecomment, name='new_freecomment'),
+
+    path('delete_comment/<int:comment_id>', views.delete_comment, name='delete_comment'),
 ]

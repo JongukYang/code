@@ -1,11 +1,17 @@
+from pydoc import pager
 from django.shortcuts import redirect, render, get_object_or_404
 from .forms import PostForm, CommentForm, FreePostForm, FreeCommentForm
 from .models import Post, Comment, FreeComment, FreePost
+# 페이지네이션, 객체들 목록을 끊어서 보여주는 것
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     # posts = Post.objects.all()
     posts = Post.objects.filter().order_by('-date')
+    paginator = Paginator(posts, 5)
+    pagenum = request.GET.get('page') # ?page=1 -> {page:1}
+    posts = paginator.get_page(pagenum)
     return render(request, 'index.html', {'posts':posts})
 
 def postcreate(request):
@@ -36,7 +42,7 @@ def new_comment(request, post_id):
         # 어떤 게시글에 달려있는 댓글인지 알지 못했기 때문
         finished_form = filled_form.save(commit=False)
         # .post에 어떤 게시글인지 pk 정보를 담아서 save 진행
-        finished_form.post = get_object_or_404(FreePost, pk=post_id)
+        finished_form.post = get_object_or_404(Post, pk=post_id)
         finished_form.save()
     return redirect('detail', post_id) # 내가 댓글 단 포스트로 redirect 해주기
 
@@ -80,3 +86,8 @@ def new_freecomment(request, post_id):
         finished_form.post = get_object_or_404(FreePost, pk=post_id)
         finished_form.save()
     return redirect('freedetail', post_id) # 내가 댓글 단 포스트로 redirect 해주기    
+
+def delete_comment(request, comment_id):
+    del_comment = get_object_or_404(Comment, pk=comment_id)
+    del_comment.delete()
+    return redirect('home')
