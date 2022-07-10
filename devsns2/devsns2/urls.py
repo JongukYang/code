@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from snsapp import views
-from account import views as account_views
+from accounts import views as account_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,4 +37,7 @@ urlpatterns = [
     path('new_freecomment/<int:post_id>', views.new_freecomment, name='new_freecomment'),
 
     path('delete_comment/<int:comment_id>', views.delete_comment, name='delete_comment'),
+
+    path('accounts/', include('allauth.urls')),
+
 ]
