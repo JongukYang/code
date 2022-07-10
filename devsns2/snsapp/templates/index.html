@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
-
-
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Tables</h1>
 <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
@@ -44,4 +40,20 @@
     </span>
     <span class="text">글쓰기</span>
 </a>
+
+<!-- Pagination -->
+{% if posts.has_previous %}
+<a href="?page=1">첫 페이지</a>
+<a href="?page={{posts.previous_page_number}}">이전 페이지</a>
+{% endif %}
+
+<span> {{ posts.number }} </span>
+<span> / </span>
+<span> {{ posts.paginator.num_pages }} </span>
+
+{% if posts.has_next %}
+<a href="?page={{posts.next_page_number}}">다음 페이지</a>
+<a href="?page={{posts.paginator.num_pages}}">마지막 페이지</a>
+{% endif %}
+
 {% endblock %}
