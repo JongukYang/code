@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apisecretkey import secret_api_key
+from .apisecretkey import secret_api_key
 
 my_id = secret_api_key
 
