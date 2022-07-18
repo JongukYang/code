@@ -1,16 +1,10 @@
+<h1>search.html page</h1> 
+<!-- {{resdata}} -->
 <!-- {{obj}} -->
-<h1>index.html Page</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="submit">
-</form>
 
 {% for o in obj %}
 
 <a href="{% url 'detail' o.id %}">영화 상세보기</a>
-
-<!-- https://image.tmdb.org/t/p/w500 -->
 실제 제목 : {{o.original_title}} <br>
 한국 제목 : {{o.title}} <br>
 포스터 경로 : <img src="https://image.tmdb.org/t/p/w500{{o.poster_path}}" alt=""> {{o.poster_path}} <br>
@@ -20,8 +14,6 @@ backdrop_path : <img src="https://image.tmdb.org/t/p/w500{{o.backdrop_path}}" al
 청불여부 : {{o.adult}} <br>
 장르 : {{o.genre_ids}} <br>
 영화 고유 id : {{o.id}} <br>
-
 <br><br><br>
 
 {% endfor %}
-
